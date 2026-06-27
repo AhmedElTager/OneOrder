@@ -1,606 +1,107 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>OneOrder | كل أوردراتك في شحنة واحدة</title>
-
-<meta name="description"
-content="OneOrder تجمع طلباتك من أكثر من مكتب وتشحنها في شحنة واحدة.">
-
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneOrder - كل اوردراتك في شحنة واحدة</title>
+    <style>
+        :root { --primary: #2563eb; --secondary: #f3f4f6; --dark: #1f2937; --text: #374151; --accent: #10b981; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; color: var(--text); line-height: 1.6; }
+        
+        /* الهيدر والسلايدر */
+        header { background: var(--primary); color: white; padding: 3rem 1rem; text-align: center; }
+        .slideshow-container { max-width: 600px; position: relative; margin: 2rem auto; height: 300px; overflow: hidden; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .mySlides { display: none; width: 100%; height: 100%; object-fit: cover; }
+        
+        .container { max-width: 1000px; margin: auto; padding: 2rem; }
+        .btn { display: inline-block; padding: 1rem 2rem; background: var(--accent); color: white; text-decoration: none; border-radius: 8px; font-weight: bold; margin: 0.5rem; transition: 0.3s; }
+        .btn:hover { opacity: 0.9; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .card { background: var(--secondary); padding: 1.5rem; border-radius: 12px; text-align: center; border: 1px solid #e5e7eb; }
+        
+        table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
+        th, td { padding: 1rem; border: 1px solid #ddd; text-align: center; }
+        
+        footer { background: var(--dark); color: white; text-align: center; padding: 2rem; margin-top: 3rem; }
+        h2 { color: var(--primary); }
+    </style>
 </head>
-
 <body>
 
-<!-- Loading -->
-
-<div id="loader">
-
-<div class="loader-box">
-
-<img src="images/logo.png" alt="OneOrder">
-
-<h2>OneOrder</h2>
-
-</div>
-
-</div>
-
-<!-- زر واتساب -->
-
-<a href="https://wa.me/201024941083"
-
-class="whatsapp"
-
-target="_blank">
-
-<i class="fab fa-whatsapp"></i>
-
-</a>
-
-<!-- زر الرجوع للأعلى -->
-
-<button id="topBtn">
-
-<i class="fa-solid fa-arrow-up"></i>
-
-</button>
-
-<!-- Header -->
-
 <header>
+    <h1>OneOrder</h1>
+    <h2>كل اوردراتك في شحنة واحدة</h2>
+    
+    <div class="slideshow-container">
+        <img class="mySlides" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8317d?w=800" alt="شحن">
+        <img class="mySlides" src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=800" alt="تغليف">
+        <img class="mySlides" src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800" alt="توصيل">
+    </div>
 
-<div class="logo">
-
-<img src="images/logo.png" alt="logo">
-
-<h2>OneOrder</h2>
-
-</div>
-
-<nav>
-
-<a href="#home">الرئيسية</a>
-
-<a href="#steps">كيف تعمل</a>
-
-<a href="#features">المميزات</a>
-
-<a href="#compare">المقارنة</a>
-
-<a href="#faq">الأسئلة</a>
-
-<a href="#contact">تواصل</a>
-
-</nav>
-
+    <p>اطلب من أي عدد من المكاتب... ونحن نجمع، نغلف، ونشحن في شحنة واحدة.</p>
+    <a href="#contact" class="btn">ابدأ الآن</a>
+    <a href="https://wa.me/201024941083" class="btn" style="background:#25d366;">اطلب عبر واتساب 01024941083</a>
 </header>
 
-<!-- Hero -->
-
-<section class="hero" id="home">
-
-<video autoplay muted loop playsinline class="hero-video">
-
-<source src="video/shipping.mp4" type="video/mp4">
-
-</video>
-
-<div class="overlay"></div>
-
-<div class="hero-content">
-
-<span class="badge">
-
-🚚 خدمة تجميع وشحن احترافية
-
-</span>
-
-<h1>
-
-كل أوردراتك
-
-<br>
-
-في شحنة واحدة
-
-</h1>
-
-<p>
-
-اطلب من أي عدد من المكاتب...
-
-ونحن نجمع المنتجات،
-
-نراجعها،
-
-نغلفها،
-
-ثم نشحنها في شحنة واحدة.
-
-</p>
-
-<div class="hero-buttons">
-
-<a href="#contact"
-
-class="btn">
-
-ابدأ الآن
-
-</a>
-
-<a href="https://wa.me/201024941083"
-
-class="btn2">
-
-<i class="fab fa-whatsapp"></i>
-
-اطلب عبر واتساب
-
-</a>
-
-</div>
-<div class="hero-stats">
-
-    <div>
-        <h2>20+</h2>
-        <span>مكتب متعاون</span>
-    </div>
-
-    <div>
-        <h2>500+</h2>
-        <span>طلب مكتمل</span>
-    </div>
-
-    <div>
-        <h2>98%</h2>
-        <span>رضا العملاء</span>
-    </div>
-
-</div>
-
-</div>
-
-</section>
-<!-- ===========================
-كيف تعمل الخدمة
-=========================== -->
-
-<section class="steps-section" id="steps">
-
-    <div class="section-title">
-
-        <span>كيف تعمل الخدمة</span>
-
-        <h2>4 خطوات بسيطة</h2>
-
-        <p>
-            كل اللي عليك تطلب، وإحنا نتولى باقي المهمة حتى توصلك شحنة واحدة.
-        </p>
-
-    </div>
-
-    <div class="steps-container">
-
-        <div class="step-card">
-
-            <div class="step-icon">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </div>
-
-            <h3>اطلب</h3>
-
-            <p>
-                اطلب من أي عدد من المكاتب أو الموردين بدون أي قيود.
-            </p>
-
+<div class="container">
+    <section>
+        <h2>كيف تعمل الخدمة؟</h2>
+        <div class="grid">
+            <div class="card">🛒 <h3>اطلب</h3></div>
+            <div class="card">📦 <h3>نجمع</h3></div>
+            <div class="card">🎁 <h3>نغلف</h3></div>
+            <div class="card">🚚 <h3>نشحن</h3></div>
         </div>
+    </section>
 
-        <div class="step-card">
-
-            <div class="step-icon">
-                <i class="fa-solid fa-box-open"></i>
-            </div>
-
-            <h3>نجمع</h3>
-
-            <p>
-                نستلم جميع الطلبات ونجمعها في مكان واحد.
-            </p>
-
-        </div>
-
-        <div class="step-card">
-
-            <div class="step-icon">
-                <i class="fa-solid fa-gift"></i>
-            </div>
-
-            <h3>نغلف</h3>
-
-            <p>
-                تغليف احترافي يحافظ على المنتجات أثناء النقل.
-            </p>
-
-        </div>
-
-        <div class="step-card">
-
-            <div class="step-icon">
-                <i class="fa-solid fa-truck-fast"></i>
-            </div>
-
-            <h3>نشحن</h3>
-
-            <p>
-                يتم إرسال جميع المنتجات في شحنة واحدة.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ===========================
-لماذا OneOrder
-=========================== -->
-
-<section class="features-section" id="features">
-
-    <div class="section-title">
-
-        <span>المميزات</span>
-
+    <section>
         <h2>لماذا OneOrder؟</h2>
-
-    </div>
-
-    <div class="features-grid">
-
-        <div class="feature-card">
-
-            <i class="fa-solid fa-box"></i>
-
-            <h3>شحنة واحدة</h3>
-
-            <p>
-                بدل استلام أكثر من شحنة، تستلم شحنة واحدة فقط.
-            </p>
-
+        <div class="grid">
+            <div class="card">✅ شحنة واحدة بدل عدة شحنات</div>
+            <div class="card">✅ توفير في تكلفة الشحن</div>
+            <div class="card">✅ تجميع من أكثر من مكتب</div>
+            <div class="card">✅ مراجعة المنتجات قبل الشحن</div>
+            <div class="card">✅ تغليف احترافي</div>
+            <div class="card">✅ سرعة التنفيذ</div>
         </div>
-
-        <div class="feature-card">
-
-            <i class="fa-solid fa-money-bill-wave"></i>
-
-            <h3>توفير في الشحن</h3>
-
-            <p>
-                تقليل تكلفة الشحن بشكل كبير.
-            </p>
-
-        </div>
-
-        <div class="feature-card">
-
-            <i class="fa-solid fa-warehouse"></i>
-
-            <h3>تجميع الطلبات</h3>
-
-            <p>
-                من أكثر من مكتب في مكان واحد.
-            </p>
-
-        </div>
-
-        <div class="feature-card">
-
-            <i class="fa-solid fa-magnifying-glass"></i>
-
-            <h3>مراجعة المنتجات</h3>
-
-            <p>
-                التأكد من سلامة الطلبات قبل الشحن.
-            </p>
-
-        </div>
-
-        <div class="feature-card">
-
-            <i class="fa-solid fa-boxes-packing"></i>
-
-            <h3>تغليف احترافي</h3>
-
-            <p>
-                تغليف يحافظ على المنتجات أثناء النقل.
-            </p>
-
-        </div>
-
-        <div class="feature-card">
-
-            <i class="fa-solid fa-bolt"></i>
-
-            <h3>سرعة التنفيذ</h3>
-
-            <p>
-                تنفيذ الطلبات بأسرع وقت ممكن.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ===========================
-لمن الخدمة
-=========================== -->
-
-<section class="clients-section">
-
-    <div class="section-title">
-
-        <span>الفئات المستهدفة</span>
-
-        <h2>لمن الخدمة؟</h2>
-
-    </div>
-
-    <div class="clients-grid">
-
-        <div class="client-card">
-
-            <i class="fa-solid fa-bullhorn"></i>
-
-            <h3>للمسوقين</h3>
-
-            <ul>
-
-                <li>الشراء من عدة مكاتب.</li>
-
-                <li>شحنة واحدة.</li>
-
-                <li>توفير وقت ومصاريف.</li>
-
-            </ul>
-
-        </div>
-
-        <div class="client-card">
-
-            <i class="fa-solid fa-building"></i>
-
-            <h3>للمكاتب</h3>
-
-            <ul>
-
-                <li>زيادة المبيعات.</li>
-
-                <li>الوصول لمسوقين أكثر.</li>
-
-                <li>بدون مجهود إضافي.</li>
-
-            </ul>
-
-        </div>
-
-    </div>
-
-</section>
-<!-- ===========================
-المقارنة
-=========================== -->
-
-<section class="compare-section" id="compare">
-
-    <div class="section-title">
-
-        <span>وفر وقتك وفلوسك</span>
-
-        <h2>الفرق بين OneOrder والطريقة التقليدية</h2>
-
-    </div>
-
-    <div class="compare-grid">
-
-        <div class="compare-card red">
-
-            <h3>❌ بدون OneOrder</h3>
-
-            <ul>
-
-                <li>5 شحنات مختلفة</li>
-
-                <li>5 مرات دفع</li>
-
-                <li>التواصل مع 5 مكاتب</li>
-
-                <li>تكلفة شحن أعلى</li>
-
-            </ul>
-
-        </div>
-
-        <div class="compare-card green">
-
-            <h3>✅ مع OneOrder</h3>
-
-            <ul>
-
-                <li>طلب واحد</li>
-
-                <li>شحنة واحدة</li>
-
-                <li>جهة واحدة للتعامل</li>
-
-                <li>توفير في التكلفة</li>
-
-            </ul>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ===========================
-الإحصائيات
-=========================== -->
-
-<section class="stats-section">
-
-    <div class="stat-box">
-
-        <h2 class="counter" data-target="20">0</h2>
-
-        <p>مكتب متعاون</p>
-
-    </div>
-
-    <div class="stat-box">
-
-        <h2 class="counter" data-target="500">0</h2>
-
-        <p>طلب مكتمل</p>
-
-    </div>
-
-    <div class="stat-box">
-
-        <h2 class="counter" data-target="98">0</h2>
-
-        <p>رضا العملاء %</p>
-
-    </div>
-
-    <div class="stat-box">
-
-        <h2>24/7</h2>
-
-        <p>دعم فني</p>
-
-    </div>
-
-</section>  
-<!-- ===========================
-الأسئلة الشائعة
-=========================== -->
-
-<section class="faq-section" id="faq">
-
-    <div class="section-title">
-        <span>FAQ</span>
-        <h2>الأسئلة الشائعة</h2>
-    </div>
-
-    <div class="faq">
-
-        <div class="faq-item">
-            <button class="faq-question">
-                هل أستطيع الطلب من أكثر من مكتب؟
-            </button>
-            <div class="faq-answer">
-                نعم، يمكنك الطلب من أي عدد من المكاتب، وسنجمعها في شحنة واحدة.
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">
-                هل يتم مراجعة المنتجات قبل الشحن؟
-            </button>
-            <div class="faq-answer">
-                نعم، نقوم بمراجعة المنتجات والتأكد من سلامتها قبل التغليف والشحن.
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">
-                هل يوجد تغليف احترافي؟
-            </button>
-            <div class="faq-answer">
-                نعم، يتم تغليف جميع الطلبات بشكل احترافي للحفاظ عليها أثناء النقل.
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ===========================
-تواصل معنا
-=========================== -->
-
-<section class="contact-section" id="contact">
-
-    <div class="section-title">
-        <span>تواصل معنا</span>
-        <h2>ابدأ شحنتك الآن</h2>
-        <p>تواصل معنا عبر أي وسيلة تناسبك.</p>
-    </div>
-
-    <div class="contact-grid">
-
-        <a href="https://wa.me/201024941083" class="contact-card" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-            <span>واتساب</span>
-        </a>
-
-        <a href="https://t.me/username" class="contact-card" target="_blank">
-            <i class="fab fa-telegram"></i>
-            <span>تيليجرام</span>
-        </a>
-
-        <a href="https://facebook.com/" class="contact-card" target="_blank">
-            <i class="fab fa-facebook"></i>
-            <span>فيسبوك</span>
-        </a>
-
-        <a href="tel:+201024941083" class="contact-card">
-            <i class="fa-solid fa-phone"></i>
-            <span>201024941083</span>
-        </a>
-
-    </div>
-
-</section>
-
-<!-- ===========================
-Footer
-=========================== -->
+    </section>
+
+    <section>
+        <h2>مقارنة</h2>
+        <table>
+            <tr><th>بدون OneOrder</th><th>مع OneOrder</th></tr>
+            <tr><td>❌ ٥ شحنات</td><td>✅ طلب واحد</td></tr>
+            <tr><td>❌ ٥ مرات دفع</td><td>✅ شحنة واحدة</td></tr>
+            <tr><td>❌ متابعة مع ٥ مكاتب</td><td>✅ جهة واحدة للتعامل</td></tr>
+        </table>
+    </section>
+
+    <section id="contact">
+        <h2>تواصل معنا</h2>
+        <p>واتساب: 01024941083</p>
+        <p>تيليجرام: <a href="https://t.me/+UwexqWq0puc0ZjU8">اضغط للانضمام</a></p>
+        <p>فيسبوك: <a href="https://www.facebook.com/share/1JWF67jYHY/">تابعنا هنا</a></p>
+    </section>
+</div>
 
 <footer>
-
-    <img src="images/logo.png" alt="OneOrder">
-
-    <h2>OneOrder</h2>
-
-    <p>كل أوردراتك في شحنة واحدة</p>
-
-    <p>© 2026 جميع الحقوق محفوظة.</p>
-
+    <p>OneOrder - كل اوردراتك في شحنة واحدة</p>
+    <p>&copy; 2026 جميع الحقوق محفوظة</p>
 </footer>
 
-<script src="script.js"></script>
+<script>
+    let slideIndex = 0;
+    showSlides();
+    function showSlides() {
+        let slides = document.getElementsByClassName("mySlides");
+        for (let i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1 }
+        slides[slideIndex-1].style.display = "block";
+        setTimeout(showSlides, 3000); // تغيير الصورة كل 3 ثواني
+    }
+</script>
 
 </body>
 </html>
